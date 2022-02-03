@@ -1,0 +1,10 @@
+.countdown {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url(../../Images//counters-bg.jpg)top/cover fixed no-repeat;
+  width: 100%;
+  height: 350px;
+  /* border-radius: 1.2rem; */
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}

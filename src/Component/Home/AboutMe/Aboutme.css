@@ -1,0 +1,42 @@
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.about-mf .about-img {
+  margin-bottom: 2rem;
+}
+.about-mf .about-img img {
+  margin-left: 10px;
+}
+@media (min-width: 767px) {
+  .about-mf .box-pl2 {
+    margin-top: 3rem;
+    padding-left: 0rem;
+  }
+}
+
+.title-s {
+  font-weight: 600;
+  color: #1e1e1e;
+  font-size: 1.1rem;
+}
+.box-shadow-full{
+  /* border: 1px solid rgb(218, 194, 194); */
+  box-shadow: 0px 0px 3px 2px #cde1f8;;
+}
+.title-box-2 {
+  margin-bottom: 3rem;
+}
+
+.title-left {
+  font-size: 2rem;
+  position: relative;
+}
+.title-left:before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: #0078ff;
+  width: 100px;
+  bottom: -12px;
+}
