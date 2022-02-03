@@ -22,7 +22,7 @@ const AboutMe = () => {
                     </div>
 
                     <div class="col-sm-6 col-md-7">
-                      <div class="about-info text-start ">
+                      <div class=" text-start ">
                         <p><span class="title-s">Name:</span> <span>Moheuddin Monna</span></p>
                         <p><span class="title-s">Profile:</span> <span>Full stack developer</span></p>
                         <p><span class="title-s"> Email:</span> <span>Moheuddin.MonnaB4u@gmail.com</span></p>

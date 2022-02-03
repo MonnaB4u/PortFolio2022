@@ -14,9 +14,9 @@ const Clock = () => {
 
 
     return (
-        <div className="coundown ">
-            <div style={{marginTop:"90px" , width: "100%", height: "250px"}}>
-                <h1   >{time}</h1>
+        <div className="countdown mt-5">
+            <div >
+                <h1  style={{marginTop:"90px"}} >{time}</h1>
                 <h1 className="">{NowDate}</h1>
             </div>
         </div>
