@@ -1,40 +1,14 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import './Testimonial.css'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import TestiMonialsDetails from './TestiMonialsDetails ';
 import userPic from '../../Images/user-one.png'
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const Testimonial = () => {
-  const testiMonials = [
-    {
-      name: 'Rekob Ramya',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
-      address: 'USA',
-      img: 'https://i.ibb.co/hgGJc8d/Gareth-Bale.jpg'
-    },
-    {
-      name: 'Brandon Savage',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
-      address: 'USA',
-      img: 'https://i.ibb.co/z7Kp6yr/np-file-33188.jpg'
-    },
-    {
-      name: 'Steve Burns',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
-      address: 'USA',
-      img: 'https://i.ibb.co/CP5sj7g/2856040-58866808-2560-1440.jpg'
-    },
-    {
-      name: 'Kevin Canlas',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
-      address: 'USA',
-      img: 'https://i.ibb.co/10SYccm/1552313010-354215-noticia-normal.jpg'
-    },
-  ]
-
-
   const options = {
     loop: true,
     center: true,
@@ -57,8 +31,19 @@ const Testimonial = () => {
       }
     }
   };
+  //////////////////////
+
+  useEffect(() => {
+    const url = 'https://afternoon-plains-42822.herokuapp.com/testimonialCollection';
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setData(data))
+  }, [])
+
+  const [datas, setData] = useState([]);
+
   return (
-    <section>
+     <section>
       <div class="testimonials paralax-mf bg-image ">
         <section id="testimonial" className="testimonials pt-70 pb-70 coundown my-5">
           <div className="container mt-5">
@@ -71,19 +56,10 @@ const Testimonial = () => {
               <div className="col-md-12">
                 <OwlCarousel id="customer-testimonoals" className="owl-carousel owl-theme" {...options}>
                   {
-                    testiMonials.length === 0 ?
-                      <div class="item">
-                        <div class="shadow-effect">
-                          <img class="img-circle" src={userPic} />
-
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        </div>
-                        <div class="testimonial-name">
-                          <h5>Rajon Rony</h5>
-                          <small>ITALY</small>
-                        </div>
-                      </div> :
-                      testiMonials.map(testiMonialDetail => {
+                    datas.length === 0 ?
+                     <h1>Data is Coming</h1>
+                      :
+                      datas.map(testiMonialDetail => {
                         return (
                           <TestiMonialsDetails testiMonialDetail={testiMonialDetail} key={testiMonialDetail._key} />
 

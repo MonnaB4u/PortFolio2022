@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HeaderMain.css'
 import Typed from 'react-typed'
 import img from '../../Images/bank-removebg-preview.png'
 const HeaderMain = () => {
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const url = 'https://afternoon-plains-42822.herokuapp.com/allResume'
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setData(data))
+    })
     return (
         <div style={{ height: '550px' }} className="row d-flex align-items-center mx-5 ">
             <div className="col-md-4 offset-md-1 mt-5 text-start">
@@ -18,9 +27,24 @@ const HeaderMain = () => {
                     <a href="https://www.linkedin.com/in/moheuddin-monnab4u/" target="_blank">
                         <button className="btn btn-primary">Hire Me</button>
                     </a>
-                    <a className="btn mr-4"href="https://drive.google.com/uc?export=download&id=1RIUN0VscdRVynEbBS6cdOsObRUs8OnuW">
-                        <button className="btn btn-primary">Resume</button>
-                    </a>
+                    {
+                        data.length === 0
+                            ?
+                            <div className="">
+                                <div class="d-flex justify-content-center my-5">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only w-75 h-75">hello</span>
+                                    </div>
+                                </div>
+                            </div>
+                            :
+                            data.map((each, index) =>
+                                <a className="btn mr-4" href={each.link}>
+                                    <button className="btn btn-primary">Resume</button>
+                                </a>
+                            )
+                    }
+
                 </div>
             </div>
             <div className="col-md-6 text-center mt-5">

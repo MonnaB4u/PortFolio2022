@@ -6,7 +6,7 @@ import ParticlesBg from 'particles-bg'
 const Header = () => {
     return (
         <div className="header">
-            <ParticlesBg type="cobweb" bg={true}/>
+            <ParticlesBg type="cobweb" bg={true} />
             <Navbar></Navbar>
             <HeaderMain></HeaderMain>
         </div>

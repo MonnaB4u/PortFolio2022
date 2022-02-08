@@ -1,37 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-// import FakeData from '../../Data';
-import Navbar from '../Navbar/Navbar';
-import './Projects.css'
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { Navbar } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
 
-
-const Projects = () => {
-
-
-
+const AllProject = () => {
+    const { ID } = useParams()
     useEffect(() => {
-        const url = 'https://afternoon-plains-42822.herokuapp.com/projectCollection'
+        const url = `https://afternoon-plains-42822.herokuapp.com/projectCollection`
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
-    },[])
+    }, [])
 
     const [data, setData] = useState([])
-    const sliceData = data.slice(0, 6)
+    const sliceData = data.slice(0, data.length)
     console.log(sliceData)
-    const navigate = useNavigate()
 
+    const navigate = useNavigate()
     return (
         <div>
+
 
             <div class="row my-5">
                 <div class="col-sm-12">
                     <div class="title-box text-center ">
-                        <h3 class="title-a ">
+                        <h3 class="title-a mt-5">
                             MY PROJECTS
                         </h3>
                         <p class="subtitle-a ">
-                            Here some of my successful projects.
+                            Here is my all successful projects.
 
                         </p>
                         <div className="d-flex justify-content-center ">
@@ -46,7 +43,7 @@ const Projects = () => {
             {
                 sliceData.length === 0 &&
                 <div className=" ">
-                    <div class="d-flex justify-content-center my-5">
+                    <div class="d-flex justify-content-center">
                         <div class="spinner-border" role="status">
                             <span class="sr-only w-75 h-75">hello</span>
                         </div>
@@ -93,12 +90,9 @@ const Projects = () => {
                         )}
 
                 </div>
-                <div className="text-center mb-5">
-                    <button onClick={() => navigate('/allProject')} className="btn btn-primary w-25">See more</button>
-                </div>
             </div>
         </div >
     );
 };
 
-export default Projects;
+export default AllProject;

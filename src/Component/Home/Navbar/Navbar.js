@@ -8,7 +8,7 @@ const Navbar = () => {
 
                <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
             <div className="container">
-                <a className="navbar-brand" href="#"> <img className="logo" src={img} alt="" /></a>
+                <a className="navbar-brand" href="/"> <img className="logo" src={img} alt="" /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <FontAwesomeIcon icon={faBars} style={{color: '#fff'}} />
                 </button>
@@ -18,16 +18,19 @@ const Navbar = () => {
                             <a className="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/aboutMe">about me</a>
+                            <a className="nav-link" href="/aboutMe">About me</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/projects">project</a>
+                            <a className="nav-link" href="/allProject">Project</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/blog">blog</a>
+                            <a className="nav-link" href="/blog">Blog</a>
+                        </li>
+                         <li className="nav-item">
+                            <a className="nav-link" href="/achivement">Achivement</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/contact">contact me</a>
+                            <a className="nav-link" href="/contact">Contact me</a>
                         </li>
                     </ul>
                 </div>

@@ -14,7 +14,7 @@ const Header2 = () => {
             <AboutMe></AboutMe>
             <Clock></Clock>
             <Projects></Projects>
-            <Testimonial></Testimonial>
+            {/* <Testimonial></Testimonial> */}
             <Blog></Blog>
             <ContactWithME></ContactWithME>
         </div>

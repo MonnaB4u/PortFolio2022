@@ -1,9 +1,10 @@
-.header{
-    height:650px;
-    position:relative;
-    /* background-image: url('../../Images/web-dev-banner.png'); */
+.header {
+    height: 650px;
+    position: relative;
+    /* background-image: url('https://cdn.wallpapersafari.com/82/91/NYsQzc.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
