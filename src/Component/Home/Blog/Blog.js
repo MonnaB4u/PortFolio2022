@@ -12,9 +12,11 @@ const Blog = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
-    })
+    },[])
 
-    const data = datas.slice(0, 3)
+const data = datas.slice(0, 3)
+
+
     const navigate = useNavigate()
     return (
         <div>

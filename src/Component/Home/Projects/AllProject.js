@@ -12,9 +12,20 @@ const AllProject = () => {
             .then(data => setData(data))
     }, [])
 
+
     const [data, setData] = useState([])
-    const sliceData = data.slice(0, data.length)
-    console.log(sliceData)
+    // const sliceData = data.slice(0,-1)
+    // console.log(sliceData)
+
+    const sliceData = [...data];
+    const shuffle = a => {
+        for (let i = a.length; i; i--) {
+            let j = Math.floor(Math.random() * i);
+            [a[i - 1], a[j]] = [a[j], a[i - 1]];
+        }
+    }
+    shuffle(sliceData);
+
 
     const navigate = useNavigate()
     return (
@@ -47,7 +58,7 @@ const AllProject = () => {
                         <div class="spinner-border" role="status">
                             <span class="sr-only w-75 h-75">hello</span>
                         </div>
-                         <h1>Data IS Coming</h1>
+                        <h1>Data IS Coming</h1>
                     </div>
                 </div>
 

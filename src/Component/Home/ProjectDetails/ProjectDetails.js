@@ -55,6 +55,7 @@ const ProjectDetails = () => {
                                         <li><strong>Name</strong>: {data.name}</li>
                                         <li><strong >Technology:</strong >{data.tecnology}</li>
                                         <li><strong>Project URL</strong>: <a href={data.link}>{data.link}</a></li>
+                                         <li><strong>Github Link</strong>: { data.gitLink === undefined ? <a href="">Link Coming Soon</a> : <a href={data.gitLink}>{data.gitLink} </a> }</li>
                                     </ul>
                                 </div>
                                 <div class="portfolio-description mb-5">

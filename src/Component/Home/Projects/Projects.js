@@ -14,10 +14,20 @@ const Projects = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
-    },[])
+    }, [])
 
     const [data, setData] = useState([])
-    const sliceData = data.slice(0, 6)
+    const sliceDatas= data.slice(0,6)
+    const sliceData = [...sliceDatas];
+
+    const shuffle = a => {
+        for (let i = a.length; i; i--) {
+            let j = Math.floor(Math.random() * i);
+            [a[i - 1], a[j]] = [a[j], a[i - 1]];
+        }
+    }
+    shuffle(sliceData);
+
     console.log(sliceData)
     const navigate = useNavigate()
 
@@ -50,7 +60,7 @@ const Projects = () => {
                         <div class="spinner-border" role="status">
                             <span class="sr-only w-75 h-75">hello</span>
                         </div>
-                         <h1>Data IS Coming</h1>
+                        <h1>Data IS Coming</h1>
                     </div>
                 </div>
 
