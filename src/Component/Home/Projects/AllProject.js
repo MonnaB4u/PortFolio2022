@@ -2,29 +2,29 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Navbar } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import projectData from '../../Data/ProjectData'
 const AllProject = () => {
     const { ID } = useParams()
     useEffect(() => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/projectCollection`
+        const url = `https://portfolio2022-database.vercel.app/projectCollection`
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
 
 
-    const [data, setData] = useState([])
+    const [sliceData, setData] = useState([])
     // const sliceData = data.slice(0,-1)
     // console.log(sliceData)
 
-    const sliceData = [...data];
-    const shuffle = a => {
-        for (let i = a.length; i; i--) {
-            let j = Math.floor(Math.random() * i);
-            [a[i - 1], a[j]] = [a[j], a[i - 1]];
-        }
-    }
-    shuffle(sliceData);
+    // const sliceData = [...data];
+    // const shuffle = a => {
+    //     for (let i = a.length; i; i--) {
+    //         let j = Math.floor(Math.random() * i);
+    //         [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    //     }
+    // }
+    // shuffle(sliceData);
 
 
     const navigate = useNavigate()

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './HeaderMain.css'
 import Typed from 'react-typed'
 import img from '../../Images/bank-removebg-preview.png'
+import fakeData from '../../Data/resume'
 const HeaderMain = () => {
 
     const [data, setData] = useState([])
 
     useEffect(() => {
-        const url = 'https://afternoon-plains-42822.herokuapp.com/allResume'
+        const url = 'https://portfolio2022-database.vercel.app/allResume'
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
@@ -48,7 +49,7 @@ const HeaderMain = () => {
                 </div>
             </div>
             <div className="col-md-6 text-center mt-5">
-                <img src={img} alt="" />
+                <img className="img-re" src={img} alt="" />
             </div>
         </div>
     );

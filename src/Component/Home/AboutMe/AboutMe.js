@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import img from '../../Images/172120862_1230387134045114_8560509450110327951_n (1).jpg'
 import Navbar from '../Navbar/Navbar';
 import './Aboutme.css'
+import skills from '../../Data/Skills'
 const AboutMe = () => {
 
   const [data, setData] = useState([])
-  // console.log(Projectdata)
+
   useEffect(() => {
-    const url = 'https://afternoon-plains-42822.herokuapp.com/Skills'
+    const url = 'https://portfolio2022-database.vercel.app/Skills'
     fetch(url)
       .then(res => res.json())
       .then(data => setData(data))
@@ -22,7 +23,7 @@ const AboutMe = () => {
           <div class="row mt-4">
             <div class="col-sm-12">
               <div class="box-shadow-full mt-5">
-                <div class="row">
+                <div class="row fd">
                   <div class="col-md-6">
                     <div class="row p-2">
 
@@ -32,28 +33,28 @@ const AboutMe = () => {
                         </div>
                       </div>
 
-                      <div class="col-sm-6 col-md-7">
-                        <div class=" text-start mx-1">
-                          <p><span class="title-s">Name:</span> <span>Moheuddin Monna</span></p>
-                          <p><span class="title-s">Profile:</span> <span>Full stack developer</span></p>
-                          <p><span class="title-s"> Email:</span> <span>Moheuddin.MonnaB4u@gmail.com</span></p>
-                          <p><span class="title-s">Phone:</span> <span>+8801628618677</span></p>
+                      <div class="col-sm-6 col-md-7 text-about-all">
+                        <div class=" text-start text mx-1 text-about">
+                          <p><span class="title-s text-about">Name:</span> <span>Moheuddin Monna</span></p>
+                          <p><span class="title-s text-about">Profile:</span> <span>Full stack developer</span></p>
+                          <p><span class="title-s text-about"> Email:</span> <span>Moheuddin.MonnaB4u@gmail.com</span></p>
+                          <p><span class="title-s text-about">Phone:</span> <span>+8801628618677</span></p>
                         </div>
                       </div>
 
-                      <div class=" text-start mx-3">
+                      <div class=" text-start title-edu mx-3">
                         <h2 class="title-left">Education</h2>
-                        <h4 class="mt-4">Graduation</h4>
-                        <h5>North Unversity of China (NUC)</h5>
-                        <h5>B.Sc in Computer Science | 2017-2021</h5>
+                        <h4 class="mt-4 title-edu">Graduation</h4>
+                        <h5 class="title-edu">North Unversity of China (NUC)</h5>
+                        <h5 class="title-edu">B.Sc in Computer Science | 2017-2021</h5>
 
-                        <h4 class="mt-3">HSC</h4>
-                        <h5>Juranpur Adarsha University College, Daudkandi,Cumilla </h5>
-                        <h5>Higher Secondary Certificate | Science | 2016 </h5>
+                        <h4 class="mt-3 title-edu title-edu-head">HSC</h4>
+                        <h5 class="title-edu">Juranpur Adarsha University College, Daudkandi,Cumilla </h5>
+                        <h5 class="title-edu">Higher Secondary Certificate | Science | 2016 </h5>
 
-                        <h4 class="mt-3">SSC</h4>
-                        <h5>Sundalpur High School, Daudkandi,Cumilla</h5>
-                        <h5>Secondary School Certificate | Science | 2014 </h5>
+                        <h4 class="mt-3 title-edu title-edu-head">SSC</h4>
+                        <h5 class="title-edu">Sundalpur High School, Daudkandi,Cumilla</h5>
+                        <h5 class="title-edu">Secondary School Certificate | Science | 2014 </h5>
 
                       </div>
 
@@ -68,7 +69,8 @@ const AboutMe = () => {
                           About me
                         </h5>
                       </div>
-                      <p class="lead mx-2">
+
+                      <p class=" mx-2 text-about-t">
                         Doing a job in the IT sector has been my dream for many years. I want to nurture this passion to thrive in my expertise. Through my dedication, I will make it possible to benefit both my company and the people associated with it
                       </p>
 

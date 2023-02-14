@@ -75,13 +75,13 @@ const ContactWithME = () => {
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md- text-center my-3">
+                                                {/* <div class="col-md- text-center my-3">
                                                     <div class="loading">Loading</div>
                                                     <div class="error-message"></div>
                                                     <div class="sent-message">Your message has been sent. Thank you!</div>
-                                                </div>
+                                                </div> */}
 
-                                                <div class="col-md- text-center">
+                                                <div class="col-md- text-center my-3">
                                                     <button type="submit" class="btn btn-primary mb-5">Send Message</button>
                                                 </div>
                                             </div>

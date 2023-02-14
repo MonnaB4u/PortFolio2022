@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
-
+import Fatkedata from '../../Data/Blog';
 const AllBlog = () => {
     const [datas, setData] = useState([])
     useEffect(() => {
-        const url = 'https://afternoon-plains-42822.herokuapp.com/allBlog';
+        const url = 'https://portfolio2022-database.vercel.app/allBlog';
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))

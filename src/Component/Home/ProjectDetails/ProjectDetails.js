@@ -3,21 +3,22 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import FakeData from '../../Data';
+import FakeData from '../../Data/ProjectData';
 import './ProjectDetails.css'
 
 const ProjectDetails = () => {
     const [data, setData] = useState([])
     const { ID } = useParams()
+
     useEffect(() => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/projectCollection/${ID}`
+        const url = `https://portfolio2022-database.vercel.app/projectCollection/${ID}`
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
-    // const findData = FakeData.find(data => data.id.toString() === ID)
-    // const finddata = data.find(data => data._id.toString() === ID)
-    // console.log(finddata)
+
+    // const data = findData.find(findData => findData._id === ID)
+    // console.log(findData)
     return (
         <div class="mt-5 pt-3">
 
@@ -44,7 +45,13 @@ const ProjectDetails = () => {
                         <div class="row my-4">
 
                             <div class="col-lg-8 my-3">
-                                <img src={data.img} class="img-fluid" alt="" />
+                                {
+                                    data.img != undefined ? <img src={data.img} class="img-fluid" alt="" /> :
+                                        <iframe id="ViostreamIframe" width="760" height="315" frameborder="0"
+                                            allowfullscreen="" src={`https://www.youtube.com/embed/${data.video}`}>
+                                        </iframe>
+                                }
+
                             </div>
 
                             <div class="col-lg-4">
@@ -55,7 +62,7 @@ const ProjectDetails = () => {
                                         <li><strong>Name</strong>: {data.name}</li>
                                         <li><strong >Technology:</strong >{data.tecnology}</li>
                                         <li><strong>Project URL</strong>: <a href={data.link}>{data.link}</a></li>
-                                         <li><strong>Github Link</strong>: { data.gitLink === undefined ? <a href="">Link Coming Soon</a> : <a href={data.gitLink}>{data.gitLink} </a> }</li>
+                                        <li><strong>Github Link</strong>: {data.gitLink === undefined ? <a href="">Link Coming Soon</a> : <a href={data.gitLink}>{data.gitLink} </a>}</li>
                                     </ul>
                                 </div>
                                 <div class="portfolio-description mb-5">

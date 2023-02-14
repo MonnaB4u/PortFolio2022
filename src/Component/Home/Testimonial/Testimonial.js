@@ -34,7 +34,7 @@ const Testimonial = () => {
   //////////////////////
 
   useEffect(() => {
-    const url = 'https://afternoon-plains-42822.herokuapp.com/testimonialCollection';
+    const url = 'https://portfolio2022-database.vercel.app/testimonialCollection';
     fetch(url)
       .then(res => res.json())
       .then(data => setData(data))

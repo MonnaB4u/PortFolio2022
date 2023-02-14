@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Achivement.css'
+import fakeData from '../../Data/Achivement'
+
+
 const AchivementDetails = () => {
-    const [data, setData] = useState([])
+    const [datas, setData] = useState(fakeData)
+    const [server,setServer]=useState([])
     const { ID } = useParams()
+
     useEffect(() => {
-        const url = `https://afternoon-plains-42822.herokuapp.com/allAchivement/${ID}`
+        const url = `https://portfolio2022-database.vercel.app/allAchivement/${ID}`
         fetch(url)
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(datass => setServer(datass))
     }, [])
+
+    const data = datas.find(datas => datas.id.toString() === ID)
+    const Serverdata = datas.find(datas => server._id.toString() === ID)
     return (
-       <div class="mt-5 pt-3">
+        <div class="mt-5 pt-3">
 
             <div class="hero hero-single route bg-image" style={{ backgroundImage: `url("https://i.ibb.co/Kw0WbNJ/overlay-bg.jpg")` }}>
                 <h1></h1>
@@ -44,7 +52,7 @@ const AchivementDetails = () => {
                                     <h3>Project information</h3>
                                     <ul>
                                         <li><strong>Category</strong>: Achivement</li>
-                                        <li><strong>Name</strong>: {data.name}</li>
+                                        <li><strong>Name</strong>: {!server.name ? data.name:server.name}</li>
                                     </ul>
                                 </div>
                                 <div class="portfolio-description mb-5">

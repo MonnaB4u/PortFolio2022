@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+import Fatkedata from '../../Data/Blog';
 import Navbar from '../Navbar/Navbar';
 const Blog = () => {
 
     const [datas, setData] = useState([])
     useEffect(() => {
-        const url = 'https://afternoon-plains-42822.herokuapp.com/allBlog';
+        const url = 'https://portfolio2022-database.vercel.app/allBlog';
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))

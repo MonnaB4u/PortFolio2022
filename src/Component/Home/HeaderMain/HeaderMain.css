@@ -2,3 +2,8 @@
     font-size: 2rem;
 
 }
+@media (max-width: 768px) {
+    .img-re{
+        width: 100px;
+    }
+}

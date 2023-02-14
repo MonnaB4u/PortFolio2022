@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import FakeData from '../../Data';
+import FakeData from '../../Data/ProjectData';
 import Navbar from '../Navbar/Navbar';
 import './Projects.css'
 
@@ -10,25 +10,23 @@ const Projects = () => {
 
 
     useEffect(() => {
-        const url = 'https://afternoon-plains-42822.herokuapp.com/projectCollection'
+        const url = 'https://portfolio2022-database.vercel.app/projectCollection'
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
 
     const [data, setData] = useState([])
-    const sliceDatas= data.slice(0,6)
-    const sliceData = [...sliceDatas];
 
-    const shuffle = a => {
-        for (let i = a.length; i; i--) {
-            let j = Math.floor(Math.random() * i);
-            [a[i - 1], a[j]] = [a[j], a[i - 1]];
-        }
-    }
-    shuffle(sliceData);
-
-    console.log(sliceData)
+    const revData = data.reverse();
+    const sliceData = revData.slice(6,9)
+    // const shuffle = a => {
+    //     for (let i = a.length; i; i--) {
+    //         let j = Math.floor(Math.random() * i);
+    //         [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    //     }
+    // }
+    // shuffle(sliceData);
     const navigate = useNavigate()
 
     return (
@@ -68,7 +66,7 @@ const Projects = () => {
             <div className="container">
                 <div className="row">
                     {
-                        sliceData.map((each, index) =>
+                        sliceData.reverse().map((each, index) =>
                             <>
                                 <div class="col-md-4 ">
                                     <div class="work-box border border-info w-85">
